@@ -8,5 +8,5 @@ For the full docs on this, please see: https://linkedin.github.io/ConsistencyMan
 However, there are a few additional things to note:
 
 	1. This feature only works on ``Model`` objects (not ``SimpleModel``).
-	2. You should implement ``mergeModel(model: Model)`` instead of ``mergeModel(model: ConsistencyManagerModel)``.
+	2. You should implement ``merge(model: Model) -> Model`` instead of ``mergeModel(model: ConsistencyManagerModel) -> ConsistencyManagerModel``.
 	3. Collections that hold different types are not automatically shared. You should not make two collections of different types share the same collection ID. (However, the models contained by collections can have different classes with the same ID. Only the collection IDs must be unique.)
